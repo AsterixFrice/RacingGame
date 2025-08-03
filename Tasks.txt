@@ -1,0 +1,18 @@
+| Priority | Task                                                                           | Type   |
+| -------- | ------------------------------------------------------------------------------ | ------ |
+| 1        | Implement character stat profiles (Frice, Vita, etc.)                          | Design |
+| 2        | Build the player + stat data structure (including mood)                        | Code   |
+| 3        | Design and code training logic (stat gains, mood effects, failure rates)       | Both   |
+| 4        | Create basic `StoryMode()` character select screen                             | Code   |
+| 5        | Plan and build basic race simulation system (tick/step system, stat influence) | Both   |
+| 6        | Create basic HUD function for Training Menu (stat/mood/time display)           | Code   |
+| 7        | Define how mood works numerically and affects outcomes                         | Design |
+| 8        | Stub out race day behavior gate (`if day == race day`)                         | Code   |
+| 9        | Connect race results to the existing GIF generator                             | Code   |
+| 10       | Determine number of races per Story Mode session                               | Design |
+| 11       | Design race outcome text system (randomized flavor text based on result)       | Design |
+| 12       | Implement save/load system for Hall of Fame + story progress                   | Code   |
+| 13       | Build Hall of Fame file init/check function                                    | Code   |
+| 14       | Clean up `ChoiceDic` to point to functions directly (not string names)         | Code   |
+| 15       | Fix spacing and variable clarity in menu code (e.g. `choice_input `)           | Code   |
+| 16       | Standardize `input("Press Enter to continue.")` feedback messages              | Code   |
