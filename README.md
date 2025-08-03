@@ -1,0 +1,140 @@
+# Structure of the game. 
+
+## Main Menu. 
+
+1. Story mode. 
+- Uses established characters and stats with the player being able to pick one to train. 
+- Check save file to mark character with previous games and best score. 
+
+2. Adventure mode.
+- Player can name the racer and the game features random stats. 
+- Currently under review. 
+- Can be implemented easily afterwards by switching pre-defined character by a random generator. 
+
+3. Hall of Fame.
+- Record of past games. 
+- Tracks best ranking for each story mode character. 
+- Create function that checks if save file exists. If not create one with 0 in everything. Otherwise load up existing one. 
+
+4. Exit.
+
+
+## Story Mode. 
+
+Step 1. 
+Player picks a player from a list. 
+Current list include Frice, Vita, Ami, Leggy, Nazo and Trip.
+    To do: 
+        Define strengths and weaknesses for each character.
+
+
+### Stats:
+
+Different characters are expected to have different values, these values can be inspected by the player (either only the player character or all of them before a race).
+Variable Stats:
+- Speed.
+    - Affects top speed. Relevant when stamina isn't 0. 
+- Stamina. 
+    - Affects how stamina is lost over the course of a race. 
+- Guts. 
+    - Affects speed when stamina is zero. 
+    - Represents a percentage of max speed.
+- Footing. 
+    - Affects odds of suffering speed loss from the track terrain and receiving injuries. 
+
+Affects all characters. 
+Fix Stats: 
+- Start the race with a max of 3 stamina. 
+- Start the race with no injuries. 
+
+---
+
+(1) Story mode. 
+(2) Adventure mode.
+(3) Hall of Fame.  
+(4) Exit.
+
+
+Step 2. 
+Player is presented with the Training menu.
+
+### Training menu. 
+
+- HUD. 
+ - Date / time until next race.
+ - Horse Stats.
+ - Mood. 
+
+- Menu. 
+ - Pick a training program. 
+  - Basic training (one stat)
+  - Advanced training (more than 1 stat, more likely to 'fail' or receive limited results)
+  - Rest (improve mood which affects success in training and race.)
+ - Check stats for next race (weather, race track and some/all rivals for the race). 
+- If day == race day, block all the other options and present 'race' option. 
+
+
+Step 3.
+Player is given a detailed gif and turn by turn view of the race and its results. 
+- Program to generate gif is already made, requires iteration but can be used currently as long as the input is similar. 
+
+Step 4. 
+Results: 
+- There's a list of winners and a minor character text about the event. 
+    - Text is based on an array of options, covering different positions and picked at random.  
+
+Step 5. 
+Return to the training menu, step 2. 
+
+Step 6. 
+After enough races, reach the end of this mode and outline all the races and results, granting one final score. 
+
+Step 7. 
+Save results and add a value (a star) depending on the final ranking. 
+    - This means implementing a save feature.  
+
+Expected game time: 10-15 minutes (if I'm lucky). 
+
+
+## characters
+
+In the story mode, several characters can be picked, with their unique starting points. 
+Due to the early state of the game, balance will be kept a low priority. 
+Characters not picked by the player increase in stats by an expected value each race.
+Stats not mentioned are considered at neutral level. 
+
+ - Frice
++ Guts
++ Footing
+- Speed
+- Stamina
+
+ - Vita
++ Speed  
+- Stamina 
+- Guts
+
+ - Ami
+- All Stats
++ Growth (better stats gain than other characters)
+
+ - Leggy
+- Footing.
++ Guts
+
+ - Nazo 
++ Footing 
++ Speed
+- Stamina
+- Guts
+
+
+ - Trip
++ All stats. 
+- Growth. 
+
+Pseudo-code: 
+    Class Racer(input):
+        self.[Stat] = (Int) (repeat as many times as relevant)
+        self.Stamina = 3 (Reset at the start of the race)
+        self.[Stat]Stat = (Int) (Non player characters receive stat/#stats per race)
